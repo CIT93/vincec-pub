@@ -16,9 +16,9 @@ const producedWaste = 20;
 // 7. Identify recycled waste
 const recycledWaste = 12;
 // 8. Tally annual transportation scores
-const annualTransportation = 6
+const annualTransportation = 6;
 // 9. Add up points
-const cfpTotal = myMembers + houseSize + foodChoice + waterConsumption + householdPurchases + producedWaste + recycledWaste + annualTransportation 
+const cfpTotal = myMembers + houseSize + foodChoice + waterConsumption + householdPurchases + producedWaste + recycledWaste + annualTransportation;
 // 10. Write JS to update the rendered html (index.html) with total footprint
 
-<script> document.getElementById('output')innerHTML = cfpTotal; </script>
+document.getElementById('output').innerHTML = cfpTotal;
