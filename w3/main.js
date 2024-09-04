@@ -18,8 +18,8 @@ function determineHouseHoldPts(numberInHousehold) {
     console.log(`Based on the number of members of the household of ${numberInHousehold} the points would be ${cardonFootPoints}.`);
 }
 
-let cardonFootPoints = 0;
-// const numberInHousehold = 3;
+ let cardonFootPoints = 0;
+ const numberInHousehold = 3;
 
 // global scope
 // forgot to commit for first message
@@ -35,21 +35,20 @@ determineHouseHoldPts(4)
 
 function determineHouseholdSize(sizeOfHousehold) {
     console.log("Inside the function");
-    if (HouseholdSize === 1) {
-        cardonFootPoints = cardonFootPoints + 10
-    } else if (HouseholdSize === 2) {
-        cardonFootPoints = cardonFootPoints + 7
-    } else if (HouseholdSize === 3) {
-        cardonFootPoints = cardonFootPoints + 4
-    } else if (HouseholdSize === 4) {
-        cardonFootPoints = cardonFootPoints + 2
+    if (sizeOfHousehold === 1) {
+        cardonFootPoints = cardonFootPoints + 10;
+    } else if (sizeOfHousehold === 2) {
+        cardonFootPoints = cardonFootPoints + 7;
+    } else if (sizeOfHousehold === 3) {
+        cardonFootPoints = cardonFootPoints + 4;
+    } else if (sizeOfHousehold === 4) {
+        cardonFootPoints = cardonFootPoints + 2;
     }
-    console.log(`Based on the size of your ${sizeOfHousehold} the points would be ${cardonFootPoints}.`);
+    console.log(`Based on the size of your household of ${sizeOfHousehold} the points would be ${cardonFootPoints}.`);
 }
 
-cardonFootPoints = 0;
-const sizeOfHousehold = 1;
 const HouseholdSize = 1;
 
 determineHouseholdSize(1)
 determineHouseholdSize(2)
+determineHouseholdSize(3)
