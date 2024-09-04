@@ -23,6 +23,7 @@ let cardonFootPoints = 0;
 
 
 // global scope
+// forgot to commit for first message
 
 determineHouseHoldPts(3)
 determineHouseHoldPts(4)
