@@ -1,3 +1,16 @@
+function determineHouseSizePts(size) {
+    if (size === "large") {
+        cardonFootPoints = cardonFootPoints + 10;
+    } else if (size === "medium") {
+        cardonFootPoints = cardonFootPoints + 7;
+    } else if (size === "small") {
+        cardonFootPoints = cardonFootPoints + 4;
+    } else if (size === "apt") {
+        cardonFootPoints = cardonFootPoints + 2;
+    }
+}
+
+
 function determineHouseHoldPts(numberInHousehold) {
     console.log("Inside the function");
     if (numberInHousehold === 1) {
@@ -19,13 +32,12 @@ function determineHouseHoldPts(numberInHousehold) {
 }
 
  let cardonFootPoints = 0;
- const numberInHousehold = 3;
 
 // global scope
 // forgot to commit for first message
 
-determineHouseHoldPts(3)
-determineHouseHoldPts(4)
+determineHouseHoldPts(5);
+determineHouseSizePts("apt");
 
 // 2. Consider the size of your home:
 // If you have a large house, then add 10 points to your score.
@@ -49,6 +61,4 @@ function determineHouseholdSize(sizeOfHousehold) {
 
 const HouseholdSize = 1;
 
-determineHouseholdSize(1)
-determineHouseholdSize(2)
-determineHouseholdSize(3)
+determineHouseholdSize(1);
