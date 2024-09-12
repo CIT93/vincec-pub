@@ -45,7 +45,27 @@ function start(houseHoldMembers, houseSize) {
 }
 
 function displayOutput() {
-    
+    for (arr of cfpData) {
+        console.log(arr)
+        const output = document.getElementById("output");
+        const newP = document.createElement("p");
+        const newP2 = document.createElement("p2");
+        const newP3 = document.createElement("p3");
+        const newP4 = document.createElement("p4");
+        const newP5 = document.createElement("p5");
+
+        newP.textContent = `Carbon Footprint total is ${arr[4]}. `;
+        newP2.textContent = `Number of household members is ${arr[0]}. `;
+        newP3.textContent = `Score for household members is ${arr[2]}. `;
+        newP4.textContent = `Size of house is ${arr[1]}. `;
+        newP5.textContent = `Score for size of house is ${arr[3]}. `;
+
+        output.appendChild(newP);
+        output.appendChild(newP2);
+        output.appendChild(newP3);
+        output.appendChild(newP4);
+        output.appendChild(newP5);
+    }
 }
 
 start(5, "apt");
