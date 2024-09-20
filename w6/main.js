@@ -39,7 +39,7 @@ function determineHouseHoldPts(numberInHousehold) {
 function displayOutObj() {
     for (obj of cfpData) {
         const newH2 = document.createElement("h2");
-        newH2.textContent = `Carbon Footprint total ${obj.cfpTotal}. `;
+        newH2.textContent = `${obj.firstname} ${obj.lastname}'s Carbon Footprint total ${obj.cfpTotal}. `;
         const newH3 = document.createElement("h3");
         newH3.textContent = 'Based on number in and size of home'
         const newP = document.createElement("p");
@@ -52,10 +52,14 @@ function displayOutObj() {
 }
 
 function start(houseHoldMembers, houseSize) {
+    const firstName = determineFirstName(firstname);
+    const lastName = determineLastName(lastname);
     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const houseSizePTS = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + houseSizePTS;
     cfpData.push({
+        firstN: firstName,
+        lastN: lastName,
         houseM: houseHoldMembers,
         houseS: houseSize,
         houseMPTS: houseHoldPTS,
@@ -71,7 +75,7 @@ function displayOutput() {
         console.log(obj)
         const output = document.getElementById("output");
         const newH2 = document.createElement("h2");
-        newH2.textContent = `Carbon Footprint total ${obj.cfpTotal}. `;
+        newH2.textContent = `${obj.firstN} ${obj.lastN}'s Carbon Footprint total ${obj.cfpTotal}. `;
         const newH3 = document.createElement("h3");
         newH3.textContent = 'Based on number in and size of home'
         const newP = document.createElement("p");
