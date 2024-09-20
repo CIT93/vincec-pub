@@ -36,24 +36,9 @@ function determineHouseHoldPts(numberInHousehold) {
     return houseHoldPoints;
 }
 
-function displayOutObj() {
-    for (obj of cfpData) {
-        const newH2 = document.createElement("h2");
-        newH2.textContent = `${obj.firstname} ${obj.lastname}'s Carbon Footprint total ${obj.cfpTotal}. `;
-        const newH3 = document.createElement("h3");
-        newH3.textContent = 'Based on number in and size of home'
-        const newP = document.createElement("p");
-        newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}). `;
-        newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
-        OUTPUT.appendChild(newH2);
-        OUTPUT.appendChild(newH3);
-        OUTPUT.appendChild(newP);
-    }
-}
-
 function start(houseHoldMembers, houseSize) {
-    const firstName = determineFirstName(firstname);
-    const lastName = determineLastName(lastname);
+    const firstName = FORM.firstname.value;
+    const lastName = FORM.lastname.value;
     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const houseSizePTS = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + houseSizePTS;
@@ -66,8 +51,6 @@ function start(houseHoldMembers, houseSize) {
         houseSPTS: houseSizePTS,
         cfpTotal: total
     });
-
-    
 }
 
 function displayOutput() {
@@ -75,11 +58,11 @@ function displayOutput() {
         console.log(obj)
         const output = document.getElementById("output");
         const newH2 = document.createElement("h2");
-        newH2.textContent = `${obj.firstN} ${obj.lastN}'s Carbon Footprint total ${obj.cfpTotal}. `;
+        newH2.textContent = `Carbon Footprint total ${obj.cfpTotal}. `;
         const newH3 = document.createElement("h3");
-        newH3.textContent = 'Based on number in and size of home'
+        newH3.textContent = `Congrats ${obj.firstN} ${obj.lastN}, Based on number in and size of home`
         const newP = document.createElement("p");
-        newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}). `;
+        newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}) `;
         newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
         output.appendChild(newH2);
         output.appendChild(newH3);
@@ -93,7 +76,7 @@ FORM.addEventListener('submit', function(e) {
    const lastName = FORM.lastname.value;
    const houseMembers = parseInt(FORM.housem.value);
    const houseSize = FORM.houses.value;
-   start(houseMembers, houseSize);
+   start(houseMembers, houseSize, firstName, lastName);
    OUTPUT.innerHTML = "";
    displayOutput();
    FORM.reset();
