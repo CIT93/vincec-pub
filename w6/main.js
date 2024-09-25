@@ -36,20 +36,20 @@ function determineHouseHoldPts(numberInHousehold) {
     return houseHoldPoints;
 }
 
-function start(houseHoldMembers, houseSize) {
+function start(first, last, houseHoldMembers, houseSize) {
     const firstName = FORM.firstname.value;
     const lastName = FORM.lastname.value;
     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const houseSizePTS = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + houseSizePTS;
     cfpData.push({
-        firstN: firstName,
-        lastN: lastName,
+        firstName: first,
+        lastName: last,
         houseM: houseHoldMembers,
         houseS: houseSize,
         houseMPTS: houseHoldPTS,
         houseSPTS: houseSizePTS,
-        cfpTotal: total
+        cfpTotal: total,
     });
 }
 
@@ -60,9 +60,9 @@ function displayOutput() {
         const newH2 = document.createElement("h2");
         newH2.textContent = `Carbon Footprint total ${obj.cfpTotal}. `;
         const newH3 = document.createElement("h3");
-        newH3.textContent = `Congrats ${obj.firstN} ${obj.lastN}, Based on number in and size of home`
+        newH3.textContent = `Based on number in and size of home for ${obj.firstName} ${obj.lastName}`
         const newP = document.createElement("p");
-        newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}) `;
+        newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}), `;
         newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
         output.appendChild(newH2);
         output.appendChild(newH3);
@@ -76,7 +76,7 @@ FORM.addEventListener('submit', function(e) {
    const lastName = FORM.lastname.value;
    const houseMembers = parseInt(FORM.housem.value);
    const houseSize = FORM.houses.value;
-   start(houseMembers, houseSize, firstName, lastName);
+   start(firstName, lastName, houseMembers, houseSize);
    OUTPUT.innerHTML = "";
    displayOutput();
    FORM.reset();
