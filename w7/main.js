@@ -1,13 +1,11 @@
-import { renderTbl, renderTblHeading } from "./render.js";
-import { determineHouseSizePts, determineHouseHoldPts } from "./carbonFootprint.js";
+import { renderTbl } from "./render.js";
+import { determineHouseSizePts, determineHouseHoldPts } from "./cfp.js";
 
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
 const cfpData = [];
 
 function start(first, last, houseHoldMembers, houseSize) {
-    const firstName = FORM.firstname.value;
-    const lastName = FORM.lastname.value;
     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const houseSizePTS = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + houseSizePTS;
@@ -32,7 +30,7 @@ FORM.addEventListener('submit', function (e) {
     //displayOutput();
     renderTbl(cfpData);
     FORM.reset();
-});
+})
 
 // I don't think it is working because the apartment score isn't adding to the total for some reason
 
