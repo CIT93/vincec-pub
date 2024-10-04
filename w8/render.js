@@ -3,18 +3,23 @@ const TBL = document.getElementById("tab-data");
 function renderTblHeading() {
     TBL.innerHTML = "";
     const table = document.createElement("table");
-    const thead = document.createElement("thead");
-    const tr = document.createElement("tr");
-    const headingTextArr = ["Name", "HouseHold", "House Size", "Footprint", "Actions"];
-    headingTextArr.forEach(function (text) {
-        const th = document.createElement("th");
-        th.textContent = text;
-        tr.appendChild(th);
-    });
-    thead.appendChild(tr);
-    table.appendChild(thead);
+    const renderbtnDel = false;
+    if (renderbtnDel) {
+        const thead = document.createElement("thead");
+        const tr = document.createElement("tr");
+        const headingTextArr = ["Name", "HouseHold", "House Size", "Footprint", "Actions"];
+        headingTextArr.forEach(function (text) {
+            const th = document.createElement("th");
+            th.textContent = text;
+            tr.appendChild(th);
+        });
+            thead.appendChild(tr);
+            table.appendChild(thead);
+        }
     return table
 }
+
+// I think I did this part backwards or something but headings do not show up on submit 
 
 function renderTblBtn(index, data) {
     const td = document.createElement("td");
@@ -31,10 +36,19 @@ function renderTblBtn(index, data) {
         renderTbl(data);
     })
     btnEdit.addEventListener('click', function (e) {
+        const editForm = document.getElementById('edit-form');
+        editForm.elements['Name'].value = obj.name;
+        editForm.elements['HouseHold'].value = obj.houseHold;
+        editForm.elements['House Size'].value = obj.houseSize;
+        editForm.elements['Footprint'].value = obj.footPrint;
 
-    })
+        editForm.dataset.index = index;
+        editForm.style.display = 'block';
+    });
     return td;
 }
+
+// getting null on editform elements not sure how to correct this
 
 function renderTblBody(data) {
     const tbody = document.createElement("tbody");
