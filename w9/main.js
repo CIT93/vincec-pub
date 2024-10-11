@@ -22,12 +22,12 @@ renderTbl(cfpData);
 
 FORM.addEventListener('submit', function (e) {
     e.preventDefault();
-    const firstName = FORM.firstname.value;
-    const lastName = FORM.lastname.value;
+    const firstName = FORM.firstName.value;
+    const lastName = FORM.lastName.value;
     const houseMembers = parseInt(FORM.housem.value);
     const houseSize = FORM.houses.value;
     start(firstName, lastName, houseMembers, houseSize);
     saveLS(cfpData);
     renderTbl(cfpData);
     FORM.reset();
-})
+});
