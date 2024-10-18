@@ -1,0 +1,3 @@
+# My understanding
+
+It wouldn't have been my first guess, but I think I would've figured it out eventually. It did help me understand functions more in getting results for the functions and how to construct it. I do appreciate how timely the review on funcitons is for our technical interviews, as well as expanding upon it before the arrow introduction. This helps me differentiate parts of the function that make it run and what I need to memorize to grasp it better on my interview.
