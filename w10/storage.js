@@ -1,12 +1,11 @@
-const saveLS = (cfpData = []) => {
+const saveLS = cfpData => {
     const serializedArr = JSON.stringify(cfpData);
-    localStorage.setItem("cfp", serializedArr)
+    localStorage.setItem("cfpData", serializedArr)
 };
-saveLS();
 
 const getLS = () => {
-    const retrievedArr = localStorage.getItem("cfp");
-    if(retrievedArr !== null) {
+    const retrievedArr = localStorage.getItem("cfpData");
+    if (retrievedArr !== null) {
         return JSON.parse(retrievedArr);
     } else {
         return [];
@@ -15,4 +14,4 @@ const getLS = () => {
 
 const cfpData = getLS();
 
-export { cfpData, saveLS, getLS };
+export {cfpData, saveLS, getLS};

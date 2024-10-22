@@ -7,7 +7,7 @@ const renderTblHeading = () => {
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
     const headingTextArr = ["Name", "HouseHold", "House Size", "Footprint", "Actions"];
-    headingTextArr.forEach(function (text) {
+    headingTextArr.forEach(text => {
         const th = document.createElement("th");
         th.textContent = text;
         tr.appendChild(th);
@@ -17,12 +17,10 @@ const renderTblHeading = () => {
     return table
 }
 
-const onUpdate = (index = 0, data = []) => {
+const onUpdate = (index, data) => {
     data.splice(index, 1);
     saveLS(data);
     renderTbl(data);
-
-    const result = onUpdate(index, data)
 }
 
 const renderTblBtn = (obj, index, data) => {
@@ -46,7 +44,7 @@ const renderTblBtn = (obj, index, data) => {
     return td;
 }
 
-const renderTblBody = (...data) => {
+const renderTblBody = data => {
     const tbody = document.createElement("tbody");
     data.forEach((obj, index) => {
         console.log(index)
