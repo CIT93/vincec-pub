@@ -7,24 +7,25 @@
     <title>Week 12 - Async Fit - Pub</title>
 </head>
 <body>
-    <form id="form"></form>
+    <form id="form">
     <fieldset>
         <legend>Time to get FIT!</legend>
         <div>
             <label for="">Type of Exercise</label>
-            <input type="text" name="typeExercise" required/>
+            <input type="text" id="exercise" name="typeExercise" required/>
         </div>
         <div>
             <label for="">Target Number of Reps</label>
-            <input type="number" name="targetReps" required/>
+            <input type="number" id="reps" name="targetReps" required/>
         </div>
         <div>
             <label for="">Time in Minutes</label>
-            <input type="number" name="timeMinutes" required/>
+            <input type="number" id="minutes" name="timeMinutes" required/>
         </div>
         <label for="">Get Ready</label>
         <button type="submit">Submit</button>
     </fieldset>
+    </form>
     <div id="output"></div>
     <legend>Submit to start!</legend>
 </body>

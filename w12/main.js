@@ -11,13 +11,11 @@ function getExercise() {
 
 function getReps(reps) {
     console.log('2')
-    const reps = ''
     return reps
 }
 
 function getMinutes(minutes) {
     console.log('5')
-    const minutes = ''
     return minutes
 }
 
@@ -33,11 +31,11 @@ function start(exercise, reps, minutes) {
 }
 
 function displayOutput() {
-    for (obj of asyncData) {
+    for (let obj of asyncData) {
         console.log(obj)
-        const output = getElementById("output");
+        const output = document.getElementById("output");
         const newH2 = document.createElement("h2");
-        newH2.textContent = `Start ${obj.typeExercise} doing ${obj.targetReps} reps in ${obj.timeMinutes}.`;
+        newH2.textContent = `Start ${obj.typeExercise} doing ${obj.targetReps} reps in ${obj.timeMinutes} minute(s).`;
         output.appendChild(newH2);
     }
 }
@@ -50,6 +48,6 @@ FORM.addEventListener('submit', function(e) {
     start(typeExercise, targetReps, timeMinutes);
     displayOutput();
    setTimeout(() => {
-    output.textContent = "Good Job!";
+    OUTPUT.textContent = "Good Job!";
    }, 3000);
 });
