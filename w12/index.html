@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="main.js"></script>
     <title>Week 12 - Async Fit - Pub</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
 </head>
+
 <body>
-    <form id="form">
-    <fieldset>
-        <legend>Time to get FIT!</legend>
-        <div>
-            <label for="">Type of Exercise</label>
-            <input type="text" id="exercise" name="typeExercise" required/>
-        </div>
-        <div>
-            <label for="">Target Number of Reps</label>
-            <input type="number" id="reps" name="targetReps" required/>
-        </div>
-        <div>
-            <label for="">Time in Minutes</label>
-            <input type="number" id="minutes" name="timeMinutes" required/>
-        </div>
-        <label for="">Get Ready</label>
-        <button type="submit">Submit</button>
-    </fieldset>
+    <main>
+        <form id="form">
+            <fieldset>
+                <legend>Time to get FIT!</legend>
+                <p class="block"></p>
+                    <label>Type of Exercise</label>
+                    <input name="type" type="text" required>
+                <p>
+                <p class="block" >
+                    <label>Target Number of Reps</label>
+                    <input name="reps" type="number" required>
+                </p>
+                <p class="block"></p>
+                    <label>Time in Minutes</label>
+                    <input name="time" type="number" required>
+            </p>
+            <p class="block">
+                <label>Get Ready</label>
+                <button>Submit</button>
+            </p>
+        </fieldset>
     </form>
-    <div id="output"></div>
-    <legend>Submit to start!</legend>
+
+
+        <section class="center" id="output">
+            <h2>Submit to start!</h2>
+        </section>
+    </main>
 </body>
+
 </html>
