@@ -3,3 +3,15 @@
 
 const instantGreetingForm = document.getElementById('instantGreetingForm');
 
+const userName = instantGreetingForm.querySelector('#userName');
+
+const handleFormSubmit = function(event) {
+    event.preventDefault();
+}
+
+const init = function () {
+    instantGreetingForm.addEventListener('submit', handleFormSubmit);
+    
+};
+
+document.addEventListener('DOMContentLoaded', init);
